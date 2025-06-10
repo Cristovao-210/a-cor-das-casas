@@ -1,0 +1,89 @@
+body {
+    background-color: azure;
+}
+
+table {
+  border-collapse: collapse;
+  width: 80%;
+  height: 80%;
+  margin: auto;
+}
+
+th, td {
+  border: 1px solid black; 
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #566962;
+  color: white;
+  text-align: center;
+}
+
+td {
+  color: rgb(12, 8, 8);
+}
+
+
+
+h1, p {
+    text-align: center;
+    color: #265e49;
+}
+
+.td-check-box {
+  text-align: center;
+}
+
+#dicas {
+  font-size: 18px;
+}
+
+/*Interações com a página*/
+
+.ticar-dica{
+  text-decoration: line-through;
+  color: red;
+}
+
+.desmarcar-dica {
+  text-decoration: none;
+  color: rgb(12, 8, 8);
+}
+
+select {
+  width: 95%;
+  padding: 3px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+  text-align: center;
+  font-weight: bold;
+  font-size: larger;
+  color: rgb(36, 65, 47);
+}
+
+/* Alertas de repetição */
+
+#mensagem-alerta{
+  border: 1.5px solid burlywood;
+  border-radius: 5px;
+  font-weight: bold;
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  margin-top: 5px;
+  padding: 5px;
+  background-color: darkorange;
+  display: none;
+}
+
+.alerta-cor-repetida {
+  background-color: darkorange;
+}
+
+.retirar-alerta-cor {
+  background-color: #f1f1f1;
+}
+
