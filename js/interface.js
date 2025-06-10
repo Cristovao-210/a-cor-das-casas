@@ -55,7 +55,7 @@ function carregar_opcoes_tabela(id_atributo, array_opcoes, casas){
                                                         ${colunas}`;
 }
 
-
+// Função para chamar funções de carregamento no arquivo index.html (tag script)
 function carregar_tabela_pagina(){
 
     carregar_opcoes_tabela("COR", CORES, CASAS);
@@ -63,45 +63,4 @@ function carregar_tabela_pagina(){
     carregar_opcoes_tabela("ANIMAL", ANIMAL, CASAS);
     carregar_opcoes_tabela("ESPORTE", ESPORTE, CASAS);
 
-}
-
-//Quando todas as colunas estiverem preenchidas exibir botão para conferir com o gabarito
-/**
- * document.getElementById("jogo").children[0] -> Acessa corpo da table (tbody)
- * document.getElementById("jogo").children[0].children[1] -> Acessa linha (tr)
- * document.getElementById("jogo").children[0].children[1].children[1] -> Acessa coluna (td)
- * document.getElementById("jogo").children[0].children[1].children[1].children[0].value -> Acessa o valor selecionado no select
- *                        tbody              tr      td          select
- * console.log(tabela_jogo.children[0].children[1].children[1].children[0].value)
- * 
- * 
- * 
- */
-const tabela_jogo = document.getElementById("jogo")
-
-function verifica_preenchimento_finalizado(){
-
-    let valores_colunas = new Array();
-    for(let i = 1; i < 5; i++){
-        for(let j = 1; j < 5; j++){
-            let valor_coluna = tabela_jogo.children[0].children[i].children[j].children[0];
-            if (valor_coluna.value){
-                valores_colunas.push(valor_coluna.value);
-                console.log(tabela_jogo.children[0].children[i].children[j].children[0].value);
-            }
-        } 
-    
-   }
-    if(valores_colunas.length == 16){
-            console.log("ARRAY COM TODOS OS VALORES PREENCHIDOS")
-        } else {
-            for(let i = 0; i < valores_colunas.length; i++){
-                valores_colunas = [];
-            }
-        }
-    console.log(valores_colunas);
-
-}
-if (tabela_jogo){
-    tabela_jogo.addEventListener("change", verifica_preenchimento_finalizado)
 }

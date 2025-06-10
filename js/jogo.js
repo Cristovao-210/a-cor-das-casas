@@ -122,3 +122,43 @@ function verifica_repeticao_atributos(atributo_id){
 
 }// Fim da Função verifica_repeticao_atributos()
 
+
+//Quando todas as colunas estiverem preenchidas exibir botão para conferir com o gabarito
+
+/** Analisando a árvore de elementos da tabela do jogo
+ * 
+ * document.getElementById("jogo").children[0] -> Acessa corpo da table (tbody)
+ * document.getElementById("jogo").children[0].children[1] -> Acessa linha (tr)
+ * document.getElementById("jogo").children[0].children[1].children[1] -> Acessa coluna (td)
+ * document.getElementById("jogo").children[0].children[1].children[1].children[0].value -> Acessa o valor selecionado no select
+ *                        tbody              tr      td          select
+ * console.log(tabela_jogo.children[0].children[1].children[1].children[0].value)
+ */
+
+// Capturando elemento da tabela do jogo
+const tabela_jogo = document.getElementById("jogo");
+// Criando a função que vai verificar o preenchimento e ser usada no evento de 'change'
+function verifica_preenchimento_finalizado(){
+
+    // Criando um array para armazenar os valores preenchidos
+    let valores_colunas = new Array();
+    // Percorrendo a árvore de elementos para acessar todas as colunas pertinentes
+    for(let i = 1; i < 5; i++){
+        for(let j = 1; j < 5; j++){
+            let valor_coluna = tabela_jogo.children[0].children[i].children[j].children[0];
+            // As colunas que tem algum valor preenchido tem esse valor armazenado no array
+            if (valor_coluna.value){
+                valores_colunas.push(valor_coluna.value);
+                console.log(tabela_jogo.children[0].children[i].children[j].children[0].value);
+            }
+        } 
+   }
+   // O array precisa estar exatamente com 16 elementos para que se entenda que o preenchimento foi finalizado (4 linhas e 4 colunas 4 x 4 = 16)
+    if(valores_colunas.length == 16){
+            console.log("ARRAY COM TODOS OS VALORES PREENCHIDOS");
+            console.log(valores_colunas);
+        } else {
+            // Caso o array não venha exatamente com 16 elementos é zerado para ser preenchido do começo novamente. Isso é para evitar duplicidade.
+            valores_colunas = [];
+        }
+}// Fim da função verifica_preenchimento_finalizado
