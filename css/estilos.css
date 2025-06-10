@@ -25,8 +25,6 @@ td {
   color: rgb(12, 8, 8);
 }
 
-
-
 h1, p {
     text-align: center;
     color: #265e49;
@@ -64,8 +62,7 @@ select {
   color: rgb(36, 65, 47);
 }
 
-/* Alertas de repetição */
-
+/* Alertas de repetição  darkorange*/
 #mensagem-alerta{
   border: 1.5px solid burlywood;
   border-radius: 5px;
@@ -75,10 +72,13 @@ select {
   margin: auto;
   margin-top: 5px;
   padding: 5px;
-  background-color: darkorange;
+  background-color: rgb(223, 212, 71);
+  box-shadow:  2px 1px 2px 1px;
+  text-align: center;
   display: none;
 }
 
+/* Usar quando conseguir pensar em uma lógica que destaque todas as colunas que estão com valores repetidos */
 .alerta-cor-repetida {
   background-color: darkorange;
 }
