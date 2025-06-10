@@ -14,6 +14,7 @@
 
 
 // Constantes para armazenzar os valores necessários dos atributos
+const ATRIBUTOS = ["COR", "NACIONALIDADE", "ANIMAL", "ESPORTE"]
 const CASAS = ["", "CASA-1", "CASA-2", "CASA-3", "CASA-4"]
 const CORES = ["", "BRANCA", "AMARELA",	"PRETA", "VERMELHA"]
 const NACIONALIDADE = ["", "ESPANHOL", "ALEMÃO", "FRANCÊS", "GREGO"]
@@ -55,5 +56,12 @@ function carregar_opcoes_tabela(id_atributo, array_opcoes, casas){
 }
 
 
+function carregar_tabela_pagina(){
 
+    carregar_opcoes_tabela("COR", CORES, CASAS);
+    carregar_opcoes_tabela("NACIONALIDADE", NACIONALIDADE, CASAS);
+    carregar_opcoes_tabela("ANIMAL", ANIMAL, CASAS);
+    carregar_opcoes_tabela("ESPORTE", ESPORTE, CASAS);
+
+}
 

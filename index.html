@@ -114,21 +114,17 @@
 
     <script src="js/interface.js"></script>
     <script src="js/jogo.js"></script>
-    <script>
-        // Carregando as opções do jogo dinamicamente
-        carregar_opcoes_tabela('COR', CORES, CASAS);
-        carregar_opcoes_tabela('NACIONALIDADE', NACIONALIDADE, CASAS);
-        carregar_opcoes_tabela('ANIMAL', ANIMAL, CASAS);
-        carregar_opcoes_tabela('ESPORTE', ESPORTE, CASAS);
-
-        // Verificar se existe maIs de uma coluna na linha com o mesmo valor para o atributo
-        verifica_repeticao_atributos('COR')
-        verifica_repeticao_atributos('NACIONALIDADE')
-        verifica_repeticao_atributos('ANIMAL')
-        verifica_repeticao_atributos('ESPORTE')
+    <script>   
+        // Carregando as opções do jogo dinamicamente (interface.js)
+        carregar_tabela_pagina()
+        // Iterando na constante ATRIBUTOS (interface.js) para passar os argumentos para as funções
+        for (atributo of ATRIBUTOS){
+            // Verificar se existe maIs de uma coluna na linha com o mesmo valor para o atributo (jogo.js)
+            verifica_repeticao_atributos(atributo);
+        }
     </script>
 
-    
 </body>
 
 </html>
+
