@@ -68,9 +68,13 @@
                 </tbody>
             </table>
         </div>
-        <div id="mensagem-alerta">
+        <div id="mensagem-alerta"><!--Aqui vai aparecer a mensagem de alerta de valor duplicado--> </div>
 
+        <div id="gabarito"> 
+           <input class="botao-conferir-resultado" type="submit" value="VER GABARITO" onclick="mostrar_gabarito()">
+           <p id="mostrar-gabarito"><!--Aqui vai aparecer a tabela com o gabarito para conferência--></p>
         </div>
+
         <div id="container-tabela">
             <!-- Tabela para interface do jogo -->
              <p>De acordo com as regras acima escolha as opções para preencher as colunas com os atributos corretos</p>
@@ -95,18 +99,8 @@
 
         </div>
 
-
-        <div>
-            <!-- Feedback das Respostas certas/erradas - Informar tentativas restantes (2 tentativas por coluna) 
-             <iframe width="80%" src="tab_gabarito.html" frameborder="1"></iframe>-->
-
-        </div>
-
-
         <div>
             <!-- Botão Finalizar / Reiniciar Jogo -->
-
-
         </div>
 
 
@@ -114,20 +108,7 @@
 
     <script src="js/interface.js"></script>
     <script src="js/jogo.js"></script>
-    <script>   
-        // Carregando as opções do jogo dinamicamente (interface.js)
-        carregar_tabela_pagina()
-        // Iterando na constante ATRIBUTOS (interface.js) para passar os argumentos para as funções
-        for (atributo of ATRIBUTOS){
-            // Verificar se existe maIs de uma coluna na linha com o mesmo valor para o atributo (jogo.js)
-            verifica_repeticao_atributos(atributo);
-        }
-        // Verificando se o preenchimento da tabela foi finalizado
-        if (tabela_jogo){
-            tabela_jogo.addEventListener("change", verifica_preenchimento_finalizado)
-        }
-    </script>
-
+    <script src="js/main.js"></script>
 </body>
 
 </html>

@@ -79,12 +79,12 @@ function verifica_repeticao_atributos(atributo_id){
                                 document.getElementById("mensagem-alerta").style.display = "block";
                                 // Insere o texto da mensagem no elemento
                                 document.getElementById("mensagem-alerta").innerText = mensage_de_alerta;
-                                // Escondendo a mensagem depois de um tempo da exibição (6 segundos)
+                                // Escondendo a mensagem depois de um tempo da exibição (5 segundos)
                                 setTimeout(() => {
                                     document.getElementById("mensagem-alerta").style.display = "none";
                                     // Limpando a variável (só pra garantir)
                                     mensage_de_alerta = "";
-                                }, 6000);
+                                }, 5000);
                         }
                     }// Fim do for
 
@@ -157,8 +157,80 @@ function verifica_preenchimento_finalizado(){
     if(valores_colunas.length == 16){
             console.log("ARRAY COM TODOS OS VALORES PREENCHIDOS");
             console.log(valores_colunas);
+            document.getElementById("gabarito").style.display = "block";
         } else {
             // Caso o array não venha exatamente com 16 elementos é zerado para ser preenchido do começo novamente. Isso é para evitar duplicidade.
             valores_colunas = [];
+            const btn_conferir_resultado = document.getElementById("gabarito")
+            if(btn_conferir_resultado){
+                btn_conferir_resultado.style.display = "none";
+            }
+            
         }
 }// Fim da função verifica_preenchimento_finalizado
+
+const tabela_gabarito = `<h2>GABARITO</h2>
+            <table id="gabarito-jogo">
+                <tr>
+                    <th>ATRIBUTOS</th>
+                    <th>CASA 1</th>
+                    <th>CASA 2</th>
+                    <th>CASA 3</th>
+                    <th>CASA 4</th>
+                </tr>
+                <tr id="COR" >
+                    <td>COR</td>
+                    <td>BRANCA</td>
+                    <td>AMARELA</td>
+                    <td>PRETA</td>
+                    <td>VERMELHA</td>
+                </tr>
+                <tr id="NACIONALIDADE">
+                    <td>NACIONALIDADE</td>
+                    <td>ESPANHOL</td>
+                    <td>ALEMÃO</td>
+                    <td>FRANCÊS</td>
+                    <td>GREGO</td>
+                </tr>
+                <tr id="ANIMAL">
+                    <td>ANIMAL</td>
+                    <td>CAVALOS</td>
+                    <td>CACHORRO</td>
+                    <td>TARTARUGAS</td>
+                    <td>BORBOLETAS</td>
+                </tr>
+                <tr id="ESPORTE">
+                    <td>ESPORTE</td>
+                    <td>TÊNIS</td>
+                    <td>FUTEBOL</td>
+                    <td>SINUCA</td>
+                    <td>BASQUETE</td>
+                </tr>
+            </table>
+
+        </div>`
+
+function desabilitar_selecao_jogo(){
+
+    for (let i = 1; i < 5; i++) {
+               
+        document.querySelector(`#COR-CASA-${i}`).disabled = true;
+        document.querySelector(`#NACIONALIDADE-CASA-${i}`).disabled = true;
+        document.querySelector(`#ANIMAL-CASA-${i}`).disabled = true;
+        document.querySelector(`#ESPORTE-CASA-${i}`).disabled = true;
+    }
+    
+}        
+
+function mostrar_gabarito(){//document.getElementById("gabarito-jogo").children[0].children[1].children[1]
+    const tab_gab = document.getElementById("gabarito-jogo")
+    if (!tab_gab){
+        const mostrar_gabarito = document.getElementById("mostrar-gabarito")
+        mostrar_gabarito.innerHTML = tabela_gabarito
+        desabilitar_selecao_jogo()
+    } else {
+        const mostrar_gabarito = document.getElementById("mostrar-gabarito")
+        mostrar_gabarito.innerHTML = ""
+    }
+    
+}

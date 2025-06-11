@@ -60,6 +60,7 @@ select {
   font-weight: bold;
   font-size: larger;
   color: rgb(36, 65, 47);
+  cursor: pointer;
 }
 
 /* Alertas de repetição  darkorange*/
@@ -87,3 +88,26 @@ select {
   background-color: #f1f1f1;
 }
 
+/* Parte final do jogo #203d1d */
+
+#gabarito {
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  margin-top: 20px;
+  text-align: center;
+  display: none;
+}
+
+.botao-conferir-resultado {
+
+  width: 40%;
+  height: 50px;
+  margin: auto;
+  cursor: pointer;
+  background-color:rgb(131, 175, 180);
+  color: rgb(182, 52, 52);
+  font-size: 20px;
+  font-weight: bold;
+  
+}
