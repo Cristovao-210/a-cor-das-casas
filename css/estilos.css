@@ -111,3 +111,7 @@ select {
   font-weight: bold;
   
 }
+
+#btn-jogar-novamente{
+  display: none;
+}

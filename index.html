@@ -1,20 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A cor das casas</title>
     <link rel="stylesheet" href="css/estilos.css">
-
 </head>
-
 <body>
-
     <!-- Container -->
     <div id="container-pagina">
-
-        <div>
+        <div id="container-dicas">
             <!-- Regras/Dicas do Jogo - Ficar oculto e aparecer quando clicar no botão -->
             <h1>A COR DAS CASAS</h1>
             <table id="dicas">
@@ -68,10 +63,12 @@
                 </tbody>
             </table>
         </div>
+
         <div id="mensagem-alerta"><!--Aqui vai aparecer a mensagem de alerta de valor duplicado--> </div>
 
         <div id="gabarito"> 
-           <input class="botao-conferir-resultado" type="submit" value="VER GABARITO" onclick="mostrar_gabarito()">
+           <input id="btn-ver-gabarito" class="botao-conferir-resultado" type="submit" value="VER GABARITO"><!--onclick="mostrar_gabarito()"-->
+           <input id="btn-jogar-novamente" class="botao-conferir-resultado" type="submit" value="JOGAR NOVAMENTE" onclick="location.reload();">
            <p id="mostrar-gabarito"><!--Aqui vai aparecer a tabela com o gabarito para conferência--></p>
         </div>
 
@@ -102,14 +99,10 @@
         <div>
             <!-- Botão Finalizar / Reiniciar Jogo -->
         </div>
-
-
     </div>
-
     <script src="js/interface.js"></script>
     <script src="js/jogo.js"></script>
     <script src="js/main.js"></script>
 </body>
-
 </html>
 
