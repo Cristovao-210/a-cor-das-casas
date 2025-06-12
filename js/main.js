@@ -18,5 +18,10 @@ if (tabela_jogo){
 // Inserindo evento de click para o botão mostrar o gabarito
 const botao_conferir_resultado = document.getElementById("btn-ver-gabarito")
 if (botao_conferir_resultado){
-    botao_conferir_resultado.addEventListener('click', mostrar_gabarito)
+    botao_conferir_resultado.addEventListener('click', () => {
+        
+        mostrar_gabarito();
+        acertos = conferir_resultado_jogador();
+        feedback_jogador(acertos)
+    });
 }

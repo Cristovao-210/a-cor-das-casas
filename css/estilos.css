@@ -4,8 +4,8 @@ body {
 
 table {
   border-collapse: collapse;
-  width: 80%;
-  height: 80%;
+  width: 70%;
+  height: 70%;
   margin: auto;
 }
 
@@ -88,7 +88,7 @@ select {
   background-color: #f1f1f1;
 }
 
-/* Parte final do jogo #203d1d */
+/* Parte final do jogo */
 
 #gabarito {
   width: 80%;
@@ -114,4 +114,22 @@ select {
 
 #btn-jogar-novamente{
   display: none;
+}
+
+/*Feedback jogador*/
+
+.paragrafo-resultado{
+
+  width: 69%;
+  height: 100%;
+  margin: auto;
+  padding: 12px;
+  margin-top: 12px;
+  border: 1.5px solid rgb(26, 24, 23);
+  border-radius: 5px;
+  font-weight: bold;
+  color: antiquewhite;
+  display: none;
+
+
 }

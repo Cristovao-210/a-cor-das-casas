@@ -196,3 +196,48 @@ function mostrar_gabarito(){
     }
     
 }//document.getElementById("gabarito-jogo").children[0].children[1].children[1]
+
+// CONFERIR RESULTADOS DO JOGADOR
+function conferir_resultado_jogador(){
+
+    const preencimento_jogador = document.getElementById("jogo");
+    const preenchimento_gabarito = document.getElementById("gabarito-jogo");
+    let acertos = 0;
+    preencimento_jogador.style.background = "yellow";
+    for (let lin = 1; lin < 5; lin++){
+        for (let col = 1; col < 5; col++){
+            let valor_gabarito = preenchimento_gabarito.children[0].children[lin].children[col].textContent;
+            let valor_jogador =  preencimento_jogador.children[0].children[lin].children[col].children[0].value
+            if (valor_jogador == valor_gabarito){
+                console.log("ACERTOU MISERAVÍ!");
+                preencimento_jogador.children[0].children[lin].children[col].children[0].style.background = "green";
+                acertos = acertos + 1
+            } else {
+                console.log("EROOOOUUU!!");
+                preencimento_jogador.children[0].children[lin].children[col].children[0].style.background = "#fa2935";
+            }
+        }
+    }// Fim do laço for 
+    return acertos;
+} 
+
+function feedback_jogador(acertos){
+
+    const maximo_acertos = 16;
+    let percentual_acertos = 0;
+    const p_acertos_jogador = document.getElementById("acertos-jogador")
+    p_acertos_jogador.innerText = `VOCÊ ACERTOU ${acertos} RESPOSTAS.`
+    p_acertos_jogador.style.background = "green";
+    p_acertos_jogador.style.display = "block";
+    const p_erros_jogador = document.getElementById("erros-jogador")
+    p_erros_jogador.innerText = `VOCÊ ERROU ${maximo_acertos - acertos} RESPOSTAS.`
+    p_erros_jogador.style.background = "#fa2935";
+    p_erros_jogador.style.display = "block";
+    const p_percentual_acertos_jogador = document.getElementById("percentual-acertos-jogador")
+    percentual_acertos = (acertos * 100) / maximo_acertos;
+    p_percentual_acertos_jogador.innerText = `O SEU PERCENTUAL DE ACERTOS FOI DE ${percentual_acertos}%`
+    p_percentual_acertos_jogador.style.background = "yellow";
+    p_percentual_acertos_jogador.style.display = "block";
+    p_percentual_acertos_jogador.style.color = "black";
+
+}
